@@ -3,7 +3,7 @@ Function.prototype.method = function(name, func) {
   return this;
 };
 
-String.method('singleSpace', function() {
+String.method('doubleSpace', function() {
   var text = this.replace(/\u00a0(?!$)/g, " "); // unicode for &nbsp not at end of line
   return text.replace(/[.|?|!]["|'|\u2019|\u201d]*\s{1,}(?!$)/g, function(a) { // unicode for curly quotes
     var lastIndex = a[1] === "  " ? 2 : 3;
@@ -18,7 +18,7 @@ function fixAllText(node){
       if (node.nodeType == 3) {
         var el = node.parentElement;
         if (el.parentElement.hasAttribute('contenteditable')) { return false; };
-        node.textContent = node.textContent.singleSpace();
+        node.textContent = node.textContent.doubleSpace();
       } else {
           fixAllText(node);
         };
