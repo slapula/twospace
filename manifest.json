@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "OneSpace",
+  "name": "TwoSpace",
   "version": "0.0.4",
-  "description": "No more double spaces after periods! With OneSpace, every site you visit will show only one space after end punctuation.",
+  "description": "No more single spaces after periods! With TwoSpace, every site you visit will show two space after end punctuation.",
   "author": "Mike Boyle",
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "file:///*"],
-      "js": ["noDoubleSpace.js"],
+      "js": ["noSingleSpace.js"],
       "run_at": "document_end",
       "all_frames": true
     }
